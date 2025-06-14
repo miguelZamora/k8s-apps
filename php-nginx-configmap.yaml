@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-code
+data:
+  index.php: |
+    <?php
+    phpinfo();
+    // Conexión a MySQL (ejemplo)
+    $host = "mysql-service";  # Nombre del Service de MySQL
+    $user = "usuario";
+    $pass = "password_usuario";
+    $db = "mi_db";
+    $conn = new mysqli($host, $user, $pass, $db);
+    if ($conn->connect_error) {
+        die("Error de conexión: " . $conn->connect_error);
+    }
+    echo "¡Conectado a MySQL en Kubernetes!";
+    ?>
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  nginx.conf: |
+    # Contenido del archivo nginx.conf que creamos antes
