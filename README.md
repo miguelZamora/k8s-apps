@@ -1,3 +1,16 @@
+Antes deben de haber instalado minikube y eso nmo esta aca eso lo dejo a ustedes 
+
+pero para iniciarlo es 
+
+```
+minikube status
+minikube start
+minikube dashbord 
+minikube loquesea 
+
+```
+
+
 # Pasos para Desplegar en minikube los Kubernetes **
 
 Se puede crea los recursos como una shell :
